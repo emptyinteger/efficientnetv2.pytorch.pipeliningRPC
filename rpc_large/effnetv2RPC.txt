@@ -1,0 +1,46 @@
+(pytorch) deepl@deepl8:~/effnetRPC$ python3 main.py
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 1, execution time = 30.863597869873047
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 2, execution time = 18.24162721633911
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 4, execution time = 10.953417778015137
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 8, execution time = 6.887513160705566
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 16, execution time = 5.197230577468872
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 32, execution time = 4.840574026107788
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 64, execution time = 4.342964172363281
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 128, execution time = 4.078624963760376
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 256, execution time = 4.170776128768921
+Processing batch 0
+Processing batch 1
+Processing batch 2
+number of splits = 512, execution time = 4.21445107460022
+(pytorch) deepl@deepl8:~/effnetRPC$ python3 singletrain.py
+Processing batch 0
+Processing batch 1
+Processing batch 2
+execution time = 1.9207932949066162
