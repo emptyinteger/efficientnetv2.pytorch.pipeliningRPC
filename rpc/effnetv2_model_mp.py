@@ -1,43 +1,15 @@
-import os
 import threading
-import time
 import math
-from functools import wraps
 
 import torch
 import torch.nn as nn
-import torch.distributed.autograd as dist_autograd
 import torch.distributed.rpc as rpc
-import torch.multiprocessing as mp
-import torch.optim as optim
-from torch.distributed.optim import DistributedOptimizer
 from torch.distributed.rpc import RRef
 
-from torchvision.models.resnet import Bottleneck
 from effnetv2part import *
+from effnetv2part import _make_divisible
 
 num_classes = 1000
-        
-        
-def _make_divisible(v, divisor, min_value=None):
-    """
-    This function is taken from the original tf repo.
-    It ensures that all layers have a channel number that is divisible by 8
-    It can be seen here:
-    https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet/mobilenet.py
-    :param v:
-    :param divisor:
-    :param min_value:
-    :return:
-    """
-    if min_value is None:
-        min_value = divisor
-    new_v = max(min_value, int(v + divisor / 2) // divisor * divisor)
-    # Make sure that round down does not go down by more than 10%.
-    if new_v < 0.9 * v:
-        new_v += divisor
-    return new_v
-
 
 # SiLU (Swish) activation function
 if hasattr(nn, 'SiLU'):

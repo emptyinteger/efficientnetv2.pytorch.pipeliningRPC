@@ -1,7 +1,5 @@
 import os
-import threading
 import time
-import math
 from functools import wraps
 
 import torch
@@ -11,12 +9,9 @@ import torch.distributed.rpc as rpc
 import torch.multiprocessing as mp
 import torch.optim as optim
 from torch.distributed.optim import DistributedOptimizer
-from torch.distributed.rpc import RRef
-
-from torchvision.models.resnet import Bottleneck
 
 from effnetv2_model_mp import *
-from effnetv2part import *
+#from effnetv2part import *
 
 num_batches = 3
 batch_size = 120

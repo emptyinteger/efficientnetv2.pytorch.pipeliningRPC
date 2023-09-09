@@ -6,26 +6,8 @@ arXiv preprint arXiv:2104.00298.
 import from https://github.com/d-li14/mobilenetv2.pytorch
 """
 
-import os
-import threading
-import time
-from functools import wraps
-import math
-
 import torch
 import torch.nn as nn
-import torch.distributed.autograd as dist_autograd
-import torch.distributed.rpc as rpc
-import torch.multiprocessing as mp
-import torch.optim as optim
-from torch.distributed.optim import DistributedOptimizer
-from torch.distributed.rpc import RRef
-
-from torchvision.models.resnet import Bottleneck
-
-
-#__all__ = ['effnetv2_s', 'effnetv2_m', 'effnetv2_l', 'effnetv2_xl']
-
 
 def _make_divisible(v, divisor, min_value=None):
     """
